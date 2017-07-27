@@ -83,19 +83,7 @@ img {
     border: none;
 }
 
-.footer {
-    background: #48802c;
-    color: #000;
-    clear: both;
-    font-size: 0.8em;
-    margin-top: 1.5em;
-    padding: 1em;
-    min-height: 1em;
-}
 
-.footer a {
-    color: #4D8618;
-}
 
 .spinner {
     background: url(../images/spinner.gif) 50% 50% no-repeat transparent;

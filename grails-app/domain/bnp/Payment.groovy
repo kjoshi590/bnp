@@ -4,11 +4,13 @@ class Payment {
 
     Date dateCreated
     Date lastUpdated
+    Integer amount
 
     static mapping = {
 
-        table 'payment_info'
         dateCreated type: 'timestamp'
         lastUpdated type: 'timestamp'
     }
+
+    static belongsTo = [booking:Booking]
 }
