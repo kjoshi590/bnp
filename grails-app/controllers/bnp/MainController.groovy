@@ -8,7 +8,8 @@ class MainController {
 
     def index() {
 
-     [user: authenticatedUser]
+        def userBookings = authenticatedUser.bookings
+     [user: authenticatedUser, bookings: userBookings]
     }
 
 }

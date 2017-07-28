@@ -22,6 +22,9 @@ class BootStrap {
             UserRole.create(user,userRole,true)
         }
 
+        //creating the courts
+        Court.findOrSaveWhere(name: 'Court 1')
+
     }
     def destroy = {
     }

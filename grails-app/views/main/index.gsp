@@ -3,6 +3,9 @@
 
     <button class="btn btn-primary">Book Court</button>
     <button class="btn btn-success">View Bookings</button>
+
+    <h3>Your Latest booking:</h3>
+     ${bookings.last().dateOfBooking}
 </div>
 
 

@@ -12,5 +12,5 @@ class Payment {
         lastUpdated type: 'timestamp'
     }
 
-    static belongsTo = [booking:Booking]
+
 }

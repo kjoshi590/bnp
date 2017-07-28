@@ -14,6 +14,10 @@ grails:
             # Whether to translate GORM events into Reactor events
             # Disabled by default for performance reasons
             events: false
+    assets:
+        bundle: true #dont individually require files in development
+        storagePath: /path/to/store #automatically copy assets to external folder on startup
+
 info:
     app:
         name: '@info.app.name@'

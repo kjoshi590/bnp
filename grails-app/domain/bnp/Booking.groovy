@@ -2,17 +2,21 @@ package bnp
 
 import com.bbarters.auth.*
 
-class Booking {
+class Booking implements Comparable {
 
     Date dateOfBooking
+    Payment payment
 
     static mapping = {
-
         dateOfBooking type:'timestamp' //change the type of column
-        payment joinTable: false, column: 'payment_id'
-
     }
-
+    static constraints = {
+        payment nullable: true
+        user nullable: true
+    }
     static belongsTo = [user:User, court: Court]
-    static hasOne = [payment: Payment]
+
+    int compareTo(obj) {
+        dateOfBooking.compareTo(obj.dateOfBooking)
+    }
 }

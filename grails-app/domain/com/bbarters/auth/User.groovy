@@ -37,6 +37,7 @@ class User implements Serializable {
 	    password column: '`password`'
     }
 
+    SortedSet bookings
     static hasMany = [bookings: Booking]
 }
 
