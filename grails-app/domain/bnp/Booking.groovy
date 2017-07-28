@@ -1,7 +1,9 @@
 package bnp
 
 import com.bbarters.auth.*
+import groovy.transform.ToString
 
+@ToString(includes =['id','dateOfBooking','court','payment'])
 class Booking implements Comparable {
 
     Date dateOfBooking

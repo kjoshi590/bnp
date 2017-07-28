@@ -1,5 +1,8 @@
 package bnp
 
+import groovy.transform.ToString
+
+@ToString(includes =['amount'])
 class Payment {
 
     Date dateCreated
