@@ -8,8 +8,8 @@ class BookingController {
 
     def index(){
 
-        def bookings = authenticatedUser.bookings
-        [bookingList: bookings]
+        params.max = 2
+        [bookingList: Booking.list(params), bookingCount: Booking.count()]
     }
 
     def create(){
@@ -17,7 +17,6 @@ class BookingController {
         def booking = new Booking()
         booking.properties = params
         return [booking: booking, entityName:'Booking']
-
     }
 
 
