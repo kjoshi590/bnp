@@ -46,5 +46,6 @@ class BookingController {
 
 
         booking.save flush: true
+        redirect(uri: "/")
     }
 }

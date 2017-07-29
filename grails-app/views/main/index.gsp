@@ -5,9 +5,8 @@
         <a class="btn btn-primary" href="/booking/create">Book Court</a>
     </sec:ifAnyGranted>
     <a class="btn btn-success" href="/booking">View Bookings</a>
-
-    <h3>Your Latest booking:</h3>
     <g:if test="${bookings}">
+        <h3>Your Latest booking:</h3>
         ${bookings.last().dateOfBooking}
     </g:if>
 </div>
