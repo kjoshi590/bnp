@@ -6,6 +6,7 @@ grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'com.bbarters.a
 grails.plugin.springsecurity.authority.className = 'com.bbarters.auth.Role'
 grails.plugin.springsecurity.logout.postOnly = false
 
+
 grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 		[pattern: '/',               access: ['permitAll']],
 		[pattern: '/error',          access: ['permitAll']],
@@ -16,7 +17,8 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 		[pattern: '/**/js/**',       access: ['permitAll']],
 		[pattern: '/**/css/**',      access: ['permitAll']],
 		[pattern: '/**/images/**',   access: ['permitAll']],
-		[pattern: '/**/favicon.ico', access: ['permitAll']],
+		[pattern: '/**/favicon.ico', access: ['permitAll']]
+
 ]
 
 grails.plugin.springsecurity.filterChain.chainMap = [

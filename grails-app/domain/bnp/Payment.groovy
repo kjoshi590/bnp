@@ -8,6 +8,7 @@ class Payment {
     Date dateCreated
     Date lastUpdated
     Integer amount
+    Booking booking
 
     static mapping = {
 
@@ -15,5 +16,8 @@ class Payment {
         lastUpdated type: 'timestamp'
     }
 
-
+    @Override
+    String toString() {
+        return amount
+    }
 }

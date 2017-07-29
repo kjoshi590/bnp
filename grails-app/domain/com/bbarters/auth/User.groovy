@@ -39,6 +39,11 @@ class User implements Serializable {
 
     SortedSet bookings
     static hasMany = [bookings: Booking]
+
+    @Override
+    String toString() {
+        return firstName + " " + lastName
+    }
 }
 
 class Address{

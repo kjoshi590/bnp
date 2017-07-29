@@ -110,7 +110,7 @@ dataSource:
 environments:
     development:
         dataSource:
-              dbCreate: create-drop
+              dbCreate: create
               username: root
               password:
               url: jdbc:mysql://localhost:3306/bnp
