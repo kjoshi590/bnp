@@ -8,6 +8,7 @@ class Payment {
     Date dateCreated
     Date lastUpdated
     Integer amount
+    String payment_info
     Booking booking
 
     static mapping = {

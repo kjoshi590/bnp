@@ -43,7 +43,7 @@ class BookingController {
         }
 
         booking.user = authenticatedUser
-        booking.payment = new Payment(amount: params.payment.amount)
+        booking.payment = new WalletPayment(amount: params.payment.amount, payment_info: "paytm")
 
 
         if (booking.hasErrors()) {
