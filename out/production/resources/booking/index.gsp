@@ -18,7 +18,38 @@
             <g:if test="${flash.message}">
                 <div class="message" role="status">${flash.message}</div>
             </g:if>
-            <f:table collection="${bookingList}" />
+            <div class="list">
+                <table>
+                    <thead>
+                    <tr>
+
+                        <g:sortableColumn property="id" title="Id"/>
+
+                        <g:sortableColumn property="dateOfBooking" title="Date"/>
+
+                        <g:sortableColumn property="payment.amount" title="Amount Paid"/>
+
+                        <g:sortableColumn property="court" title="Court"/>
+
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <g:each in="${bookingList}" status="i" var="booking">
+                        <tr >
+
+                            <td><g:link action="show" id="${booking.id}">${fieldValue(bean:booking, field:'id')}</g:link></td>
+
+                            <td>${fieldValue(bean:booking, field:'dateOfBooking')}</td>
+
+                            <td>${fieldValue(bean:booking, field:'payment.amount')}</td>
+
+                            <td>${fieldValue(bean:booking, field:'court')}</td>
+                        </tr>
+                    </g:each>
+                    </tbody>
+                </table>
+            </div>
+
 
             <div class="pagination">
                 <g:paginate total="${bookingCount ?: 0}" />

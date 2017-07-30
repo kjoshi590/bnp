@@ -1,6 +1,9 @@
 package bnp
 
+import com.bnp.usertype.JSONUserType
 import groovy.transform.ToString
+import org.grails.web.json.JSONObject
+
 
 @ToString(includes =['amount'])
 class Payment {
@@ -8,17 +11,15 @@ class Payment {
     Date dateCreated
     Date lastUpdated
     Integer amount
-    String payment_info
+    JSONObject payment_info
     Booking booking
 
-    static mapping = {
 
-        dateCreated type: 'timestamp'
-        lastUpdated type: 'timestamp'
-    }
+
 
     static constraints = {
         amount min: 100
+        payment_info type: JSONUserType
     }
 
     @Override
