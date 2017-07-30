@@ -16,6 +16,10 @@ class Payment {
         lastUpdated type: 'timestamp'
     }
 
+    static constraints = {
+        amount min: 100
+    }
+
     @Override
     String toString() {
         return amount

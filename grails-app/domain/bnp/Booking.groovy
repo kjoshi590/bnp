@@ -3,6 +3,7 @@ package bnp
 import com.bbarters.auth.*
 
 import groovy.transform.ToString
+import org.apache.commons.lang.time.DateUtils
 
 @ToString(includes =['id','dateOfBooking','court','payment'])
 class Booking implements Comparable {
@@ -10,12 +11,11 @@ class Booking implements Comparable {
     Date dateOfBooking
 
 
-    static mapping = {
-        dateOfBooking type:'timestamp' //change the type of column
-    }
+
     static constraints = {
         payment nullable: true
         user nullable: true
+        dateOfBooking validator: { val, obj -> DateUtils.isSameDay(new Date(),val)}
     }
     static belongsTo = [user:User, court: Court]
     static hasOne = [payment: Payment]
