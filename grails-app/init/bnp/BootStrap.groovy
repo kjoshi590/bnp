@@ -9,17 +9,17 @@ class BootStrap {
         def adminRole = Role.findOrSaveWhere(authority: 'ROLE_ADMIN')
         def userRole = Role.findOrSaveWhere(authority: 'ROLE_USER')
 
-        def admin = User.findOrSaveWhere(username:'ksjoshi88', password: 'kastya',firstName: 'Kaustubh', lastName: 'Joshi', email: 'ksjoshi88@gmail.com',
-            userAddress: new Address(line_1: 'abc',line_2: 'baner',pin: 411045, city: 'Pune', state: 'MH', country: 'INDIA'))
-        def user = User.findOrSaveWhere(username:'ritesh', password: 'ritu',firstName: 'Ritesh', lastName: 'Bhagat', email: 'ritesh94@gmail.com',
-                userAddress: new Address(line_1: 'abc',line_2: 'baner',pin: 411045, city: 'Pune', state: 'MH', country: 'INDIA'))
+        def admin = User.findOrSaveWhere(username: 'ksjoshi88', password: 'kastya', firstName: 'Kaustubh', lastName: 'Joshi', email: 'ksjoshi88@gmail.com',
+                userAddress: new Address(line_1: 'abc', line_2: 'baner', pin: 411045, city: 'Pune', state: 'MH', country: 'INDIA'))
+        def user = User.findOrSaveWhere(username: 'ritesh', password: 'ritu', firstName: 'Ritesh', lastName: 'Bhagat', email: 'ritesh94@gmail.com',
+                userAddress: new Address(line_1: 'abc', line_2: 'baner', pin: 411045, city: 'Pune', state: 'MH', country: 'INDIA'))
 
-        if(!admin.authorities.contains(adminRole)){
-            UserRole.create(admin,adminRole,true)
+        if (!admin.authorities.contains(adminRole)) {
+            UserRole.create(admin, adminRole, true)
         }
 
-        if(!user.authorities.contains(adminRole)){
-            UserRole.create(user,userRole,true)
+        if (!user.authorities.contains(adminRole)) {
+            UserRole.create(user, userRole, true)
         }
 
         //creating the courts

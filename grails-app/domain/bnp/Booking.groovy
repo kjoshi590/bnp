@@ -15,7 +15,7 @@ class Booking implements Comparable {
     static constraints = {
         payment nullable: true
         user nullable: true
-        dateOfBooking validator: { val, obj -> DateUtils.isSameDay(new Date(),val)}
+        dateOfBooking validator: { val, obj -> val >= DateUtils.truncate(new Date(), Calendar.DAY_OF_MONTH)}
     }
     static belongsTo = [user:User, court: Court]
     static hasOne = [payment: Payment]
