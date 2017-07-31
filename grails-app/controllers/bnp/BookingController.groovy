@@ -1,9 +1,8 @@
 package bnp
 
+import com.bbarters.services.SavePaymentInfoService
 import grails.plugin.springsecurity.annotation.Secured
 import com.bbarters.auth.*
-import groovy.json.JsonBuilder
-import groovy.json.JsonOutput
 
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
@@ -45,7 +44,8 @@ class BookingController {
         }
 
         booking.user = authenticatedUser
-        booking.payment = new CardPayment(amount: params.payment.amount, payment_info: JsonOutput.toJson([card_type: 'VISA', card_no: 4212345]))
+
+        booking.payment = SavePaymentInfoService.createPayment('Card', Integer.parseInt(params.payment.amount))
 
 
         if (booking.hasErrors()) {
