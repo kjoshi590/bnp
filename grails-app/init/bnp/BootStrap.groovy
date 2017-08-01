@@ -23,7 +23,10 @@ class BootStrap {
         }
 
         //creating the courts
-        Court.findOrSaveWhere(name: 'Court 1')
+        Court.findOrSaveWhere(name: 'Court 1', rate: 300)
+        Court.findOrSaveWhere(name: 'Court 2', rate: 250)
+        Court.findOrSaveWhere(name: 'Court 3', rate: 200)
+        Court.findOrSaveWhere(name: 'Court 4', rate: 200)
 
     }
     def destroy = {
