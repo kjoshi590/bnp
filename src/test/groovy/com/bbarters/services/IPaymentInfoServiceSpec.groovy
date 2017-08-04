@@ -6,8 +6,8 @@ import spock.lang.Specification
 /**
  * See the API for {@link grails.test.mixin.services.ServiceUnitTestMixin} for usage instructions
  */
-@TestFor(SavePaymentInfoService)
-class SavePaymentInfoServiceSpec extends Specification {
+@TestFor(PaymentService)
+class IPaymentInfoServiceSpec extends Specification {
 
     def setup() {
     }

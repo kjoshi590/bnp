@@ -1,13 +1,11 @@
 package com.bbarters.services
 
-import bnp.CardPayment
 import bnp.Payment
-import groovy.json.JsonOutput;
 import grails.transaction.Transactional
 import org.grails.web.json.JSONObject
 
 @Transactional
-class SavePaymentInfoService {
+class PaymentService {
 
     public static Payment createPayment(String paymentType, Integer amt, JSONObject pinfo) {
 
@@ -16,7 +14,7 @@ class SavePaymentInfoService {
         return instance
     }
 
-    private static void savePaymentDetails(SavePaymentInfo p, Integer amount, JSONObject pinfo)
+    private static void savePaymentDetails(IPaymentInfo p, Integer amount, JSONObject pinfo)
     {
         p.savePaymentInfo(amount, pinfo)
     }

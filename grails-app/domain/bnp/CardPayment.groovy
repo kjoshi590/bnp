@@ -1,14 +1,12 @@
 package bnp
 
-import com.bbarters.services.SavePaymentInfo
-import grails.converters.JSON
-import groovy.json.JsonOutput
+import com.bbarters.services.IPaymentInfo
 import org.grails.web.json.JSONObject
 
-class CardPayment extends Payment implements SavePaymentInfo {
+class CardPayment extends Payment implements IPaymentInfo {
 
     static mapping = {
-        discriminator "card"
+        discriminator "Card"
     }
 
     public void savePaymentInfo(int amt, JSONObject pinfo){

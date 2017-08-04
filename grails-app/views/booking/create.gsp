@@ -131,6 +131,26 @@
                                 </div>
                             </div>
                         </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingFour">
+                            <h4 class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                    Cash Payment
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseFour" class="panel-collapse collapse"  data-payment="Cash" role="tabpanel" aria-labelledby="headingThree">
+                            <div class="panel-body">
+                                Just hand over the cash please, that will do.
+                                <div class="form-group">
+                                    <label  class="col-sm-4 control-label">Cash Paid</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" name="payment_info.cash_paid" placeholder="XXXX">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     </div>
                 </fieldset>
 

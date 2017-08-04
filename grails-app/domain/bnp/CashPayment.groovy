@@ -3,14 +3,14 @@ package bnp
 import com.bbarters.services.IPaymentInfo
 import org.grails.web.json.JSONObject
 
-class WalletPayment extends Payment implements IPaymentInfo{
+class CashPayment extends Payment implements IPaymentInfo {
 
     static mapping = {
-        discriminator "Wallet"
+        discriminator "Cash"
     }
 
     public void savePaymentInfo(int amt, JSONObject pinfo){
-        this.amount = amt * 0.75;
+        this.amount = amt ;
         this.payment_info = pinfo;
     }
 }
