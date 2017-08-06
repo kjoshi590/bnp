@@ -5,3 +5,7 @@
 .payment-panel{
     width:60%;
 }
+
+.membership-selector{
+    width: 40% !important;
+}

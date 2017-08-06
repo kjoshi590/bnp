@@ -47,8 +47,10 @@ class BookingController {
 
         booking.user = authenticatedUser
 
+        Integer bookingAmount = booking.court.rate * authenticatedUser.bookingDiscount
+
         JSONObject pinfo = new JSONObject(JsonOutput.toJson(params.payment_info))
-        booking.payment = PaymentService.createPayment(params.payment_type, booking.court.rate,pinfo)
+        booking.payment = PaymentService.createPayment(params.payment_type,bookingAmount,pinfo)
 
 
         if (booking.hasErrors()) {

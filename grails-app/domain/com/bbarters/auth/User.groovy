@@ -1,9 +1,12 @@
 package com.bbarters.auth
 
+import com.bbarters.services.EmailService
 import groovy.transform.EqualsAndHashCode
 import groovy.transform.ToString
 import grails.compiler.GrailsCompileStatic
-import bnp.*;
+import bnp.*
+
+import java.time.LocalDate;
 
 @GrailsCompileStatic
 @EqualsAndHashCode(includes='username')
@@ -12,16 +15,24 @@ class User implements Serializable {
 
     private static final long serialVersionUID = 1
 
-    String username
-    String password
     String firstName
     String lastName
     String email
     Address userAddress
+    String phone
+
+    Date startDate
+    Date endDate
+    Float bookingDiscount
+    String location
+
+    String username
+    String password
     boolean enabled = true
     boolean accountExpired
     boolean accountLocked
     boolean passwordExpired
+
 
     Set<Role> getAuthorities() {
         (UserRole.findAllByUser(this) as List<UserRole>)*.role as Set<Role>
@@ -43,6 +54,13 @@ class User implements Serializable {
     @Override
     String toString() {
         return firstName + " " + lastName
+    }
+
+    public void saveMembershipInfo(){}
+
+    public void notifyNewMember(){
+        // Let us send an email to new member
+        EmailService.sendEmail(this.email)
     }
 }
 

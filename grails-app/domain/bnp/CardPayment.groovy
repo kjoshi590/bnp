@@ -10,7 +10,7 @@ class CardPayment extends Payment implements IPaymentInfo {
     }
 
     public void savePaymentInfo(int amt, JSONObject pinfo){
-        this.amount = amt * 0.8
+        this.amount = (amt * 0.8)
         this.payment_info = pinfo
     }
 }
