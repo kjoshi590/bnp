@@ -1,5 +1,9 @@
 package bnp
 
+import bnp.decorators.BallPack
+import bnp.decorators.Coaching
+import bnp.decorators.Rackets
+import com.bbarters.decorators.BookingAddOnsService
 import com.bbarters.services.PaymentService
 import grails.plugin.springsecurity.annotation.Secured
 import com.bbarters.auth.*
@@ -47,7 +51,7 @@ class BookingController {
 
         booking.user = authenticatedUser
 
-        Integer bookingAmount = booking.court.rate * authenticatedUser.bookingDiscount
+        Integer bookingAmount = BookingAddOnsService.applyAddOns(booking.court,params)
 
         JSONObject pinfo = new JSONObject(JsonOutput.toJson(params.payment_info))
         booking.payment = PaymentService.createPayment(params.payment_type,bookingAmount,pinfo)

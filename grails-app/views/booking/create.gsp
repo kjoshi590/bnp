@@ -33,6 +33,11 @@
                 <fieldset class="form">
 
                     <f:field property="court" bean="booking"></f:field><br>
+
+                    <h1> Add-ons (Price)</h1>
+                    <g:checkBox name="ballpack" value = "true" checked="false"  /> Tennis Balls (200) &nbsp;
+                    <g:checkBox name="rackets" value = "true" checked="false" /> Rackets for Rent (250) &nbsp;
+                    <g:checkBox name="coaching" value = "true" checked="false" /> Coaching Session (300) &nbsp;<br><br>
                     <f:field property="dateOfBooking" bean="booking"></f:field><br>
                     <h4>Payment options:</h4><br>
                     <g:hiddenField name="payment_type" id="payment_type" value="Netbanking"></g:hiddenField>
@@ -141,7 +146,7 @@
                         </div>
                         <div id="collapseFour" class="panel-collapse collapse"  data-payment="Cash" role="tabpanel" aria-labelledby="headingThree">
                             <div class="panel-body">
-                                Just hand over the cash please, that will do.
+                                Just hand over the cash at the counter please, that will do.
                                 <div class="form-group">
                                     <label  class="col-sm-4 control-label">Cash Paid</label>
                                     <div class="col-sm-10">

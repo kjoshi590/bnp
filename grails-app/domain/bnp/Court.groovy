@@ -2,16 +2,13 @@ package bnp
 
 
 
-class Court {
+abstract class Court {
 
     String name
     Integer rate
+    String location
 
     static hasMany = [bookings: Booking]
 
-
-    @Override
-    String toString() {
-        return name + " (Rs " + rate + ")"
-    }
+    public abstract Integer getCost();
 }

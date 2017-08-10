@@ -23,10 +23,15 @@ class BootStrap {
 //        }
 
         //creating the courts
-        Court.findOrSaveWhere(name: 'Court 1', rate: 300)
-        Court.findOrSaveWhere(name: 'Court 2', rate: 250)
-        Court.findOrSaveWhere(name: 'Court 3', rate: 200)
-        Court.findOrSaveWhere(name: 'Court 4', rate: 200)
+        HardCourt.findOrSaveWhere(name: 'NY-Court 1', rate: 300, location: "NY")
+        HardCourt.findOrSaveWhere(name: 'MUM-Court 1', rate: 300, location: "MUM")
+        HardCourt.findOrSaveWhere(name: 'LON-Court 1', rate: 300, location: "LON")
+        ClayCourt.findOrSaveWhere(name: 'NY-Court 2', rate: 200, location: "NY")
+        ClayCourt.findOrSaveWhere(name: 'MUM-Court 2', rate: 200, location: "MUM")
+        ClayCourt.findOrSaveWhere(name: 'LON-Court 2', rate: 200, location: "LON")
+        GrassCourt.findOrSaveWhere(name: 'NY-Court 3', rate: 400, location: "NY")
+        GrassCourt.findOrSaveWhere(name: 'MUM-Court 3', rate: 400, location: "MUM")
+        GrassCourt.findOrSaveWhere(name: 'LON-Court 3', rate: 400, location: "LON")
 
     }
     def destroy = {
