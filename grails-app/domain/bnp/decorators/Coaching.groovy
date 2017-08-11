@@ -6,7 +6,7 @@ class Coaching extends BookingDecorator {
 
     Court courtBooking;
 
-    public Coaching(Court c)
+    public Coaching(c)
     {
         this.courtBooking = c;
     }
